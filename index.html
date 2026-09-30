@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>化学之王 Chemical Combo · 网页版</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div id="app">
+    <!-- ============ 顶部：实验台 ============ -->
+    <header id="topbar">
+      <div class="brand">
+        <span class="logo">⚗</span>
+        <span class="title">化学之王</span>
+        <span class="sub">Chemical Combo</span>
+      </div>
+      <div class="piles">
+        <div class="pile" id="pile-deck" title="药品柜（剩余牌堆）">
+          <span class="pile-label">药品柜</span>
+          <span class="pile-value" id="deck-count">0</span>
+        </div>
+        <div class="pile" id="pile-waste" title="废液缸（严禁使用，除特殊牌【回收】）">
+          <span class="pile-label">废液缸</span>
+          <span class="pile-value" id="waste-count">0</span>
+          <button class="mini" id="btn-waste">查看</button>
+        </div>
+        <div class="pile" id="pile-round">
+          <span class="pile-label">回合</span>
+          <span class="pile-value" id="round-no">1</span>
+        </div>
+      </div>
+      <div class="top-actions">
+        <button class="ghost" id="btn-undo" title="回溯（悔棋）：撤销自己上一次操作">↩ 回溯</button>
+        <button class="ghost" id="btn-rules">📖 规则</button>
+        <button class="ghost" id="btn-cardlist">🧪 物质总表</button>
+        <button class="ghost" id="btn-newgame">🔄 重新开始</button>
+      </div>
+    </header>
+
+    <div id="body">
+      <!-- ============ 左：玩家列表与日志 ============ -->
+      <aside id="left">
+        <section class="panel">
+          <h3>科学家</h3>
+          <ul id="player-list"></ul>
+        </section>
+        <section class="panel grow">
+          <h3>实验记录</h3>
+          <div id="log"></div>
+        </section>
+      </aside>
+
+      <!-- ============ 中：实验台 ============ -->
+      <main id="center">
+        <section id="bench-panel">
+          <div class="bench-head">
+            <h3>实验台 <span class="hint" id="bench-hint"></span></h3>
+            <div class="bench-actions">
+              <span class="hint" id="bench-choose-hint"></span>
+            </div>
+          </div>
+          <div id="bench"></div>
+          <div id="reaction-strip"></div>
+        </section>
+
+        <section id="hand-panel">
+          <div class="hand-head">
+            <h3 id="hand-title">我的手牌</h3>
+            <div class="hand-tools">
+              <span class="hint" id="sel-hint">点击卡牌选择（可多选凑齐一个反应的全部反应物）</span>
+              <button class="primary" id="btn-play">出牌</button>
+              <button class="ghost" id="btn-pass" title="Pass：本轮在场科学家全部 Pass 后，实验台上的物质才倒入废液缸">Pass</button>
+              <button class="ghost" id="btn-clear">取消选择</button>
+            </div>
+          </div>
+          <div id="hand"></div>
+        </section>
+      </main>
+
+      <!-- ============ 右：可出的牌 / 提示 ============ -->
+      <aside id="right">
+        <section class="panel">
+          <h3>可出的牌</h3>
+          <div id="playable-list" class="playable-list"></div>
+        </section>
+        <section class="panel">
+          <h3>可行动作</h3>
+          <div id="hints" class="hints"></div>
+        </section>
+        <section class="panel">
+          <h3>反应参考</h3>
+          <div id="rx-lookup">
+            <div class="lookup-row">
+              <input id="rx-input" type="text" placeholder="输入物质名，如 盐酸 / HCl" />
+              <button class="ghost small" id="btn-rx">查询</button>
+            </div>
+            <div id="rx-result" class="rx-result"></div>
+          </div>
+        </section>
+      </aside>
+    </div>
+
+    <!-- ============ 我的牌区（座位视图） ============ -->
+    <footer id="bottom">
+      <div id="all-hands"></div>
+    </footer>
+  </div>
+
+  <!-- ================= 遮罩层 ================= -->
+  <div id="overlay" class="hidden">
+    <div id="overlay-box">
+      <div id="overlay-head">
+        <h2 id="overlay-title">标题</h2>
+        <button class="ghost small" id="overlay-close">✕</button>
+      </div>
+      <div id="overlay-body"></div>
+    </div>
+  </div>
+
+  <!-- ================= 欢迎界面 ================= -->
+  <div id="welcome" class="modal">
+    <div class="welcome-box">
+      <div class="welcome-logo">⚗</div>
+      <h1>化学之王</h1>
+      <div class="welcome-en">Chemical Combo · 网页复现版</div>
+      <p class="welcome-sub">
+        把实验台上的药品接成一条化学反应链。<br />
+        打出手牌中的物质牌，与实验台上的物质发生反应，生成物留在台上供下一位继续接龙。
+      </p>
+      <div class="welcome-menu">
+        <button class="welcome-item primary" id="welcome-start">
+          <span class="ic">🔬</span>
+          <span class="tx"><b>开始游戏</b><i>进入实验设置，选择人数、实验方式与 DLC</i></span>
+        </button>
+        <button class="welcome-item" id="welcome-rules">
+          <span class="ic">📖</span>
+          <span class="tx"><b>规则介绍</b><i>卡牌构成、出牌判定、特殊牌与 DLC 指示</i></span>
+        </button>
+        <button class="welcome-item" id="welcome-credits">
+          <span class="ic">🧑‍🔬</span>
+          <span class="tx"><b>制作人员</b><i>桌游原作与网页复现的出处</i></span>
+        </button>
+      </div>
+      <p class="welcome-fine">
+        规则依据《化学之王 游戏指南》与《规则补充》整理 · 单文件离线运行，无需联网
+      </p>
+    </div>
+  </div>
+
+  <!-- ================= 开局设置 ================= -->
+  <div id="setup" class="modal hidden">
+    <div class="setup-box">
+      <div class="setup-head">
+        <button class="ghost small" id="setup-back">← 返回</button>
+        <h1>⚗ 化学之王 <span>Chemical Combo</span></h1>
+        <span class="setup-lead">按《游戏指南》与《规则补充》复现</span>
+      </div>
+
+      <div class="setup-cols">
+        <!-- 左列：牌局构成 -->
+        <div class="setup-col">
+          <h3 class="col-title">🧪 牌局构成</h3>
+
+          <div class="field">
+            <label>游玩人数（建议 3~5 人）</label>
+            <div class="seg" id="set-players">
+              <button data-v="2">2 人</button>
+              <button data-v="3" class="on">3 人</button>
+              <button data-v="4">4 人</button>
+              <button data-v="5">5 人</button>
+            </div>
+          </div>
+
+          <div class="field">
+            <label>实验方式</label>
+            <div class="seg" id="set-mode">
+              <button data-v="chain" class="on">接龙实验 ★★★★★</button>
+              <button data-v="relay">接力实验 ★★★★</button>
+              <button data-v="element">元素接力 ★★</button>
+            </div>
+            <p class="tip" id="mode-tip">出牌须能与上位反应的生成物之一反应，可一次出多张牌组成全部反应物。</p>
+          </div>
+
+          <div class="field">
+            <label>DLC 启用情况（建议 4 人及以上）</label>
+            <div class="checks">
+              <label class="check"><input type="checkbox" id="set-dlcsub" checked /> 物质 DLC（10 张物质牌）</label>
+              <label class="check"><input type="checkbox" id="set-people" checked /> 人物 DLC（5 位化学家）</label>
+              <label class="check"><input type="checkbox" id="set-ops" checked /> 操作 DLC（5 种操作）</label>
+              <label class="check"><input type="checkbox" id="set-special" checked /> 特殊牌（5 张）</label>
+            </div>
+          </div>
+
+          <div class="field">
+            <label>对手</label>
+            <div class="seg" id="set-bots">
+              <button data-v="all" class="on">全部电脑</button>
+              <button data-v="one">1 位真人 + 电脑</button>
+              <button data-v="human">全部真人（同一设备轮流）</button>
+            </div>
+            <p class="tip" id="bots-tip">观战模式：所有座位均由电脑控制。</p>
+          </div>
+        </div>
+
+        <!-- 右列：界面与体验 -->
+        <div class="setup-col">
+          <h3 class="col-title">⚙ 界面与体验</h3>
+
+          <div class="field">
+            <label>电脑出牌间隔：<span id="bot-speed-val" class="val">0.7 秒</span></label>
+            <input type="range" id="set-botspeed" min="0" max="4" step="0.1" value="0.7" />
+            <p class="tip">数值越大电脑思考越慢；设为 0 则立即出牌（仅对电脑席位有效）。</p>
+          </div>
+
+          <div class="field">
+            <label>科学家昵称（可留空使用默认名）</label>
+            <div id="set-names" class="names"></div>
+          </div>
+
+          <div class="field">
+            <label>是否启用下方记牌器</label>
+            <div class="seg" id="set-counter">
+              <button data-v="1" class="on">启用</button>
+              <button data-v="0">关闭</button>
+            </div>
+            <div id="counter-opts">
+              <label class="check" style="margin-top:6px"><input type="checkbox" id="set-counter-color" checked /> 展示牌的种类（颜色）</label>
+              <label class="sub-label">展示模式</label>
+              <div class="seg" id="set-counter-mode">
+                <button data-v="total" class="on">仅展示总手牌数</button>
+                <button data-v="each">展示各科学家手牌数</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="field">
+            <label>是否明牌（明牌时所有手牌可见）</label>
+            <div class="seg" id="set-open">
+              <button data-v="0" class="on">否（暗牌）</button>
+              <button data-v="1">是（明牌）</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="setup-foot">
+        <button id="btn-start" class="start">开始实验</button>
+        <p class="fine">反应范围：初高中常见化学反应（不含分解反应）。出牌时不考虑化学计量数。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= 换人遮罩（同设备轮流） ================= -->
+  <div id="handoff" class="modal hidden">
+    <div class="handoff-box">
+      <div class="handoff-icon">🔬</div>
+      <h2 id="handoff-title">轮到 科学家 A</h2>
+      <p id="handoff-sub">请将设备交给下一位科学家；点击按钮后才会显示他的手牌。</p>
+      <div id="handoff-info" class="handoff-info"></div>
+      <button id="handoff-ok" class="start">我准备好了，显示手牌</button>
+    </div>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="reactions-data.js"></script>
+  <script src="game.js"></script>
+  <script src="ui.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,527 @@
+/* ============================================================
+   化学之王 Chemical Combo —— 样式
+   ============================================================ */
+:root {
+  --bg: #0d1117;
+  --bg2: #141b24;
+  --panel: #182029;
+  --panel2: #1e2833;
+  --line: #2b3a47;
+  --text: #e6edf3;
+  --dim: #93a4b3;
+  --acid: #e0574a;
+  --base: #4a90d9;
+  --salt: #4bbf8a;
+  --oxide: #d9a441;
+  --es: #a97bd6;
+  --special: #f0c419;
+  --dlc: #45c8d8;
+  --ok: #4bbf8a;
+  --warn: #e8a33d;
+  --card-w: 92px;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: radial-gradient(1200px 700px at 50% -10%, #1b2735 0%, var(--bg) 60%);
+  color: var(--text);
+  font-family: "Segoe UI", "Microsoft YaHei", "PingFang SC", system-ui, sans-serif;
+  font-size: 14px;
+  overflow: hidden;
+}
+
+button { font-family: inherit; cursor: pointer; }
+
+.hidden { display: none !important; }
+
+#app { display: flex; flex-direction: column; height: 100%; }
+
+/* ---------------- 顶栏 ---------------- */
+#topbar {
+  display: flex; align-items: center; gap: 18px;
+  padding: 8px 14px;
+  background: linear-gradient(180deg, #1a2532, #131a22);
+  border-bottom: 1px solid var(--line);
+  flex: 0 0 auto;
+}
+.brand { display: flex; align-items: baseline; gap: 8px; }
+.brand .logo { font-size: 22px; }
+.brand .title { font-size: 19px; font-weight: 700; letter-spacing: 2px; }
+.brand .sub { font-size: 11px; color: var(--dim); letter-spacing: 1px; }
+
+.piles { display: flex; gap: 10px; margin-left: auto; }
+.pile {
+  display: flex; align-items: center; gap: 6px;
+  background: var(--panel); border: 1px solid var(--line);
+  border-radius: 8px; padding: 4px 10px;
+}
+.pile-label { font-size: 11px; color: var(--dim); }
+.pile-value { font-size: 15px; font-weight: 700; color: var(--dlc); }
+.top-actions { display: flex; gap: 6px; }
+
+/* ---------------- 通用控件 ---------------- */
+button.ghost {
+  background: var(--panel); color: var(--text);
+  border: 1px solid var(--line); border-radius: 7px;
+  padding: 5px 10px; font-size: 12px; transition: .15s;
+}
+button.ghost:hover { background: var(--panel2); border-color: #3d5163; }
+button.ghost.small { padding: 3px 8px; font-size: 11px; }
+button.primary {
+  background: linear-gradient(180deg, #2f7d5c, #256349); color: #fff;
+  border: 1px solid #3aa377; border-radius: 7px;
+  padding: 6px 16px; font-size: 13px; font-weight: 600;
+}
+button.primary:hover { filter: brightness(1.12); }
+button.primary:disabled, button.ghost:disabled { opacity: .4; cursor: not-allowed; }
+button.mini {
+  background: #24303c; color: var(--dim); border: 1px solid var(--line);
+  border-radius: 5px; font-size: 10px; padding: 1px 5px;
+}
+
+/* ---------------- 三栏布局 ---------------- */
+#body { display: flex; flex: 1 1 auto; min-height: 0; gap: 8px; padding: 8px; }
+#left { flex: 0 0 210px; display: flex; flex-direction: column; gap: 8px; min-height: 0; overflow: hidden; }
+#center { flex: 1 1 auto; display: flex; flex-direction: column; gap: 8px; min-width: 0; min-height: 0; }
+#right { flex: 0 0 250px; display: flex; flex-direction: column; gap: 8px; min-height: 0; overflow: auto; }
+
+.panel {
+  background: var(--panel); border: 1px solid var(--line);
+  border-radius: 10px; padding: 8px 10px; min-height: 0;
+  flex: 0 0 auto;              /* 默认按内容高度，不被压缩 */
+}
+.panel.grow { flex: 1 1 auto; display: flex; flex-direction: column; overflow: hidden; }
+.panel h3 {
+  margin: 0 0 6px; font-size: 12px; color: var(--dim);
+  font-weight: 600; letter-spacing: 1px; text-transform: uppercase;
+  flex: 0 0 auto;
+}
+
+/* ---------------- 玩家列表 ---------------- */
+#player-list { list-style: none; margin: 0; padding: 0; max-height: 34vh; overflow-y: auto; }
+#player-list li {
+  display: flex; align-items: center; gap: 6px;
+  padding: 5px 6px; border-radius: 7px; margin-bottom: 3px;
+  border: 1px solid transparent; font-size: 12.5px;
+}
+#player-list li.cur { background: #1d3a2c; border-color: #3aa377; }
+#player-list li.me { font-weight: 700; }
+#player-list li.out { opacity: .45; }
+#player-list li .nm { flex: 1 1 auto; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+#player-list li .cnt { color: var(--dlc); font-weight: 700; }
+#player-list li .tag {
+  font-size: 10px; padding: 0 4px; border-radius: 4px;
+  background: #33414f; color: #cbd6e0;
+}
+#player-list li .tag.skip { background: #6b3b1e; color: #ffd9a8; }
+#player-list li .tag.win { background: #2f6b4f; color: #ccffe6; }
+#player-list li .tag.bot { background: #2b3d55; color: #b9d6ff; }
+
+/* ---------------- 实验记录 ---------------- */
+#log { flex: 1 1 auto; overflow-y: auto; font-size: 12px; line-height: 1.55; min-height: 60px; }
+#log div { padding: 2px 0; border-bottom: 1px dashed #223040; color: #c3cfda; }
+#log div.ok { color: #9fe3c0; }
+#log div.warn { color: #f0c48a; }
+#log div.win { color: #ffe082; font-weight: 700; }
+#log div.dlc { color: #8ee6f0; }
+#log div.special { color: #ffe066; }
+#log div.muted { color: #7d8b98; }
+
+/* ---------------- 实验台 ---------------- */
+#bench-panel {
+  background: linear-gradient(180deg, #16202b, #121a23);
+  border: 1px solid var(--line); border-radius: 10px;
+  padding: 8px 10px; flex: 0 0 auto;
+}
+.bench-head { display: flex; align-items: center; margin-bottom: 6px; }
+.bench-head h3 { margin: 0; font-size: 12px; color: var(--dim); letter-spacing: 1px; }
+.bench-head .hint { margin-left: 8px; font-size: 11px; color: #7d8b98; }
+.bench-actions { margin-left: auto; }
+#bench { display: flex; flex-wrap: wrap; gap: 8px; min-height: calc(var(--card-w) * 0.62); align-items: center; }
+#bench .empty { color: #58697a; font-size: 12px; font-style: italic; }
+#reaction-strip {
+  margin-top: 7px; font-size: 12px; color: #9fe3c0;
+  min-height: 18px; font-family: Consolas, "Cascadia Mono", monospace;
+}
+
+/* ---------------- 手牌 ---------------- */
+#hand-panel {
+  background: var(--panel); border: 1px solid var(--line);
+  border-radius: 10px; padding: 8px 10px;
+  flex: 1 1 auto; display: flex; flex-direction: column; min-height: 0;
+}
+.hand-head { display: flex; align-items: center; margin-bottom: 6px; gap: 10px; }
+.hand-head h3 { margin: 0; font-size: 12px; color: var(--dim); letter-spacing: 1px; }
+.hand-tools { margin-left: auto; display: flex; align-items: center; gap: 8px; }
+.hand-tools .hint { font-size: 11px; color: #7d8b98; }
+#hand {
+  display: flex; flex-wrap: wrap; gap: 8px; align-content: flex-start;
+  overflow-y: auto; padding: 4px 2px 8px; flex: 1 1 auto;
+}
+
+/* ---------------- 卡牌 ---------------- */
+.card {
+  width: var(--card-w); height: calc(var(--card-w) * 1.42);
+  border-radius: 9px; position: relative; cursor: pointer;
+  background: linear-gradient(160deg, #263241, #1a232e);
+  border: 1px solid #36485a; color: var(--text);
+  padding: 6px 6px 5px; display: flex; flex-direction: column;
+  transition: transform .12s, box-shadow .12s, border-color .12s;
+  user-select: none; flex: 0 0 auto;
+}
+.card:hover { transform: translateY(-4px); box-shadow: 0 8px 18px rgba(0, 0, 0, .5); }
+.card.sel {
+  border-color: #ffd54f; box-shadow: 0 0 0 2px rgba(255, 213, 79, .55), 0 8px 18px rgba(0, 0, 0, .5);
+  transform: translateY(-6px);
+}
+.card.suggest { border-color: #4bbf8a; box-shadow: 0 0 0 2px rgba(75, 191, 138, .4); }
+.card.disabled { opacity: .38; cursor: not-allowed; filter: grayscale(.85); }
+.card.disabled:hover { transform: none; box-shadow: none; }
+.card.bench-target {
+  border-color: #ffd54f;
+  box-shadow: 0 0 0 3px rgba(255, 213, 79, .65), 0 6px 16px rgba(0, 0, 0, .5);
+  cursor: pointer; transform: translateY(-5px);
+}
+.card.bench-target::after {
+  content: '↑ 点此反应'; position: absolute; bottom: -16px; left: 50%;
+  transform: translateX(-50%); font-size: 9.5px; color: #ffd54f; white-space: nowrap;
+}
+.card.bench-chosen { border-color: #4bbf8a; box-shadow: 0 0 0 3px rgba(75, 191, 138, .7); }
+
+/* 确认弹窗按钮行 */
+.btn-row { display: flex; gap: 8px; justify-content: flex-end; margin-top: 14px; }
+
+/* ---------------- 可出的牌列表 ---------------- */.playable-list { display: flex; flex-direction: column; gap: 4px; max-height: 220px; overflow-y: auto; }
+.playable-list .pl {
+  font-size: 11.5px; padding: 4px 7px; border-radius: 6px; cursor: pointer;
+  background: #1b2530; border: 1px solid var(--line); color: #d6e2ee;
+}
+.playable-list .pl:hover { background: #22303d; }
+.playable-list .pl.ok { border-color: #2f5a45; background: #16241d; color: #bfe9d3; }
+.playable-list .pl.sp { border-color: #6b5a20; background: #241f12; color: #ffe9a8; }
+.playable-list .pl.dlc { border-color: #2f6a7a; background: #12232a; color: #b6f0f7; }
+.playable-list .pl .why { color: #7d8b98; font-size: 10.5px; display: block; margin-top: 2px; }
+.playable-list .none { color: #7d8b98; font-size: 11.5px; }
+
+/* ---------------- 昵称输入 ---------------- */
+.names { display: flex; flex-direction: column; gap: 5px; }
+.names .name-row { display: flex; align-items: center; gap: 7px; }
+.names .name-row span { flex: 0 0 78px; font-size: 12px; color: var(--dim); }
+.names input {
+  flex: 1 1 auto; background: #101820; color: var(--text);
+  border: 1px solid var(--line); border-radius: 6px; padding: 5px 8px; font-size: 12.5px;
+}
+.sub-label { display: block; font-size: 11.5px; color: var(--dim); margin: 8px 0 4px; }
+#counter-opts.disabled { opacity: .45; pointer-events: none; }
+
+/* 记牌器 */
+#bottom.counter-off { display: none; }
+.card .cat-bar { height: 4px; border-radius: 3px; margin-bottom: 4px; }
+.card.cat-Ad .cat-bar { background: var(--acid); }
+.card.cat-Be .cat-bar { background: var(--base); }
+.card.cat-St .cat-bar { background: var(--salt); }
+.card.cat-Oe .cat-bar { background: var(--oxide); }
+.card.cat-Es .cat-bar { background: var(--es); }
+.card.cat-Ot .cat-bar { background: #ffffff; }        /* 其他：白色标签 */
+.card.cat-X .cat-bar { background: var(--special); }
+.card.cat-P .cat-bar { background: #e07ab0; }
+.card.cat-O .cat-bar { background: var(--dlc); }
+
+.card .formula {
+  font-size: 15px; font-weight: 700; text-align: center;
+  font-family: Consolas, "Cascadia Mono", monospace; line-height: 1.15;
+  word-break: break-all;
+}
+.card .cn { font-size: 10.5px; text-align: center; color: #b8c6d3; margin-top: 1px; }
+.card .icons { font-size: 10px; text-align: center; color: #8fa0af; margin-top: 3px; letter-spacing: 1px; }
+.card .note {
+  font-size: 9.5px; color: #93a4b3; margin-top: auto; line-height: 1.25;
+  max-height: 30px; overflow: hidden;
+}
+.card .cat {
+  position: absolute; top: 5px; right: 6px;
+  font-size: 9.5px; color: #cfe0ee; font-weight: 700;
+  background: #2a3644; border-radius: 4px; padding: 0 3px;
+}
+.card .dlc-mark {
+  position: absolute; top: 5px; left: 6px;
+  font-size: 8.5px; color: #05202a; font-weight: 800;
+  background: var(--dlc); border-radius: 3px; padding: 0 3px;
+}
+.card.people {
+  background: linear-gradient(160deg, #33263f, #221a2c);
+  border-color: #5a4570;
+}
+.card.op {
+  background: linear-gradient(160deg, #1f3440, #16252e);
+  border-color: #2f6a7a;
+}
+.card.special {
+  background: linear-gradient(160deg, #3a3320, #2a2516);
+  border-color: #8a7327;
+}
+.card .big {
+  font-size: 20px; font-weight: 800; text-align: center; margin: 6px 0 2px;
+  letter-spacing: 2px;
+}
+.card .text { font-size: 9.5px; color: #cbd6e0; line-height: 1.3; overflow: hidden; }
+.card .who { font-size: 11px; text-align: center; color: #f0c419; }
+
+.card.bench-card { cursor: default; }
+.card.bench-card:hover { transform: none; box-shadow: none; }
+.card.bench-card.invalid { opacity: .5; filter: grayscale(.6); }
+.card.bench-card.new { animation: pop .45s ease-out; }
+@keyframes pop {
+  0% { transform: scale(.6); opacity: 0; }
+  70% { transform: scale(1.08); }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* ---------------- 右侧 ---------------- */
+.hints { display: flex; flex-direction: column; gap: 5px; max-height: 300px; overflow-y: auto; }
+.hint-item {
+  font-size: 11.5px; padding: 5px 7px; border-radius: 7px;
+  background: #1b2a22; border: 1px solid #2f5a45; color: #bfe9d3; cursor: pointer;
+}
+.hint-item:hover { background: #223a2e; }
+.hint-item.sp { background: #2a2618; border-color: #6b5a20; color: #ffe9a8; }
+.hint-item.invalid { background: #2a2222; border-color: #5a3a3a; color: #e8c0c0; }
+.hint-item.small { font-size: 11px; }
+
+.lookup-row { display: flex; gap: 6px; }
+#rx-input {
+  flex: 1 1 auto; background: #101820; color: var(--text);
+  border: 1px solid var(--line); border-radius: 6px; padding: 4px 7px; font-size: 12px;
+}
+.rx-result { margin-top: 6px; font-size: 11.5px; line-height: 1.5; max-height: 320px; overflow-y: auto; }
+.rx-result .rx { padding: 4px 0; border-bottom: 1px dashed #223040; color: #cbd6e0; }
+.rx-result .rx b { color: #9fe3c0; }
+.rx-result .nm { color: #8ee6f0; font-size: 11px; }
+
+/* ---------------- 底部：各家手牌 ---------------- */
+#bottom {
+  flex: 0 0 auto; border-top: 1px solid var(--line);
+  background: #101820; padding: 6px 10px; max-height: 190px; overflow-y: auto;
+}
+#all-hands { display: flex; flex-direction: column; gap: 6px; }
+.hand-row { display: flex; align-items: center; gap: 8px; }
+.hand-row .who {
+  flex: 0 0 92px; font-size: 11.5px; color: var(--dim);
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.hand-row .who.cur { color: #9fe3c0; font-weight: 700; }
+.hand-row .who.me { color: #ffd54f; }
+
+/* ---------------- 换人遮罩 ---------------- */
+#handoff { z-index: 120; background: radial-gradient(800px 500px at 50% 10%, #1d2b3a 0%, #0a0e13 70%); }
+.handoff-box {
+  width: min(520px, 92vw); background: var(--bg2);
+  border: 1px solid var(--line); border-radius: 18px; padding: 26px 28px;
+  text-align: center; box-shadow: 0 30px 80px rgba(0, 0, 0, .7);
+}
+.handoff-icon { font-size: 40px; margin-bottom: 4px; }
+.handoff-box h2 { margin: 0 0 6px; font-size: 24px; letter-spacing: 2px; color: #ffd54f; }
+.handoff-box p { color: var(--dim); font-size: 13px; margin: 0 0 14px; }
+.handoff-info {
+  text-align: left; display: flex; flex-direction: column; gap: 6px;
+  margin-bottom: 18px; max-height: 40vh; overflow-y: auto;
+}
+.ho-line {
+  background: #101820; border-left: 3px solid var(--dlc);
+  padding: 6px 10px; border-radius: 0 6px 6px 0; font-size: 12.5px; color: #c3cfda;
+}
+input[type="range"] {
+  width: 100%; accent-color: #3aa377; background: transparent;
+}
+.val { color: #9fe3c0; font-weight: 700; }
+.hand-row .cards { display: flex; gap: 5px; flex-wrap: wrap; }
+.mini-card {
+  font-size: 10.5px; padding: 2px 6px; border-radius: 5px;
+  background: #223040; border: 1px solid #33475a; color: #d6e2ee;
+  font-family: Consolas, monospace;
+}
+.mini-card.cat-Ad { border-color: var(--acid); }
+.mini-card.cat-Be { border-color: var(--base); }
+.mini-card.cat-St { border-color: var(--salt); }
+.mini-card.cat-Oe { border-color: var(--oxide); }
+.mini-card.cat-Es { border-color: var(--es); }
+.mini-card.cat-Ot { border-color: #ffffff; color: #ffffff; }   /* 其他：白色标签 */
+.mini-card.cat-X { border-color: var(--special); color: #ffe066; }
+.mini-card.cat-P { border-color: #e07ab0; color: #ffc6e2; }
+.mini-card.cat-O { border-color: var(--dlc); color: #b6f0f7; }
+.mini-card.hidden-card { color: #6c7c8b; }
+
+/* ---------------- 遮罩层 ----------------
+ * 通用弹窗（规则 / 物质总表 / 制作人员 / 选择器）必须盖在欢迎界面与设置面板之上：
+ * #overlay 在 HTML 中位于 #welcome / #setup 之前，若 z-index 相同就会被后出现的
+ * 欢迎界面遮住，表现为「规则介绍 / 制作人员点不开」。因此这里用 300。 */
+#overlay {
+  position: fixed; inset: 0; background: rgba(4, 8, 12, .78);
+  display: flex; align-items: center; justify-content: center; z-index: 300;
+  backdrop-filter: blur(2px);
+}
+#overlay-box {
+  width: min(880px, 94vw); max-height: 88vh; display: flex; flex-direction: column;
+  background: var(--bg2); border: 1px solid var(--line); border-radius: 14px; overflow: hidden;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, .6);
+}
+#overlay-head {
+  display: flex; align-items: center; padding: 10px 14px;
+  border-bottom: 1px solid var(--line); background: #16202b;
+}
+#overlay-head h2 { margin: 0; font-size: 15px; letter-spacing: 1px; }
+#overlay-head button { margin-left: auto; }
+#overlay-body { padding: 14px; overflow-y: auto; font-size: 13px; line-height: 1.75; }
+#overlay-body h3 { color: #8ee6f0; font-size: 13.5px; margin: 16px 0 6px; }
+#overlay-body h4 { color: #ffd54f; font-size: 12.5px; margin: 12px 0 4px; }
+#overlay-body ul { margin: 4px 0 4px 18px; padding: 0; }
+#overlay-body li { margin: 2px 0; }
+#overlay-body .k { color: #9fe3c0; font-weight: 600; }
+#overlay-body .quote {
+  background: #101820; border-left: 3px solid var(--dlc);
+  padding: 6px 10px; border-radius: 0 6px 6px 0; color: #c3cfda; margin: 6px 0;
+}
+.card-grid { display: flex; flex-wrap: wrap; gap: 10px; }
+.card-grid .card { cursor: default; }
+.card-grid .card:hover { transform: none; box-shadow: none; }
+
+/* ---------------- 开局设置 ---------------- */
+.modal {
+  position: fixed; inset: 0; z-index: 100;
+  background: radial-gradient(900px 600px at 50% 0%, #1c2a38 0%, #0a0e13 70%);
+  display: flex; align-items: center; justify-content: center; overflow-y: auto;
+}
+/* 键值行（制作人员 / 声明） */
+.kv {
+  display: flex; gap: 10px; font-size: 12.5px; padding: 5px 0;
+  border-bottom: 1px dashed rgba(255, 255, 255, .06); line-height: 1.65;
+}
+.kv b { flex: 0 0 88px; color: #7fd0ab; font-weight: 600; }
+.kv span { flex: 1 1 auto; color: #c3cfda; }
+
+/* ---------------- 欢迎界面 ---------------- */
+.welcome-box {
+  width: min(560px, 92vw); background: var(--bg2);
+  border: 1px solid var(--line); border-radius: 18px; padding: 34px 32px 22px;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, .7); margin: 20px 0; text-align: center;
+}
+.welcome-logo {
+  font-size: 52px; line-height: 1; margin-bottom: 6px;
+  filter: drop-shadow(0 0 18px rgba(58, 163, 119, .55));
+}
+.welcome-box h1 {
+  margin: 0; font-size: 34px; letter-spacing: 8px; text-indent: 8px;
+  background: linear-gradient(180deg, #e8f6ef, #7fd0ab);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.welcome-en { font-size: 12px; letter-spacing: 3px; color: var(--dim); margin-top: 4px; }
+.welcome-sub { color: #9fb0bf; font-size: 13px; line-height: 1.85; margin: 16px 0 22px; }
+.welcome-menu { display: flex; flex-direction: column; gap: 10px; }
+.welcome-item {
+  display: flex; align-items: center; gap: 14px; text-align: left;
+  background: var(--panel); color: var(--text); border: 1px solid var(--line);
+  border-radius: 12px; padding: 13px 16px; transition: .15s;
+}
+.welcome-item:hover {
+  border-color: #3aa377; background: #17242c; transform: translateX(3px);
+}
+.welcome-item .ic { font-size: 22px; flex: 0 0 auto; }
+.welcome-item .tx { display: flex; flex-direction: column; gap: 3px; }
+.welcome-item .tx b { font-size: 15px; letter-spacing: 2px; }
+.welcome-item .tx i { font-size: 11.5px; color: #8595a4; font-style: normal; }
+.welcome-item.primary {
+  background: linear-gradient(180deg, #22624a, #17402f);
+  border-color: #3aa377;
+}
+.welcome-item.primary .tx i { color: #a8e2c6; }
+.welcome-fine { color: #6c7c8b; font-size: 11px; margin: 20px 0 0; }
+
+/* ---------------- 开局设置（两列） ---------------- */
+#setup { align-items: flex-start; padding: 18px 0; }
+.setup-box {
+  width: min(940px, 95vw); background: var(--bg2);
+  border: 1px solid var(--line); border-radius: 16px; padding: 16px 22px 18px;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, .65); margin: auto;
+}
+.setup-head {
+  display: flex; align-items: center; gap: 14px;
+  padding-bottom: 12px; margin-bottom: 14px; border-bottom: 1px solid var(--line);
+}
+.setup-head h1 { margin: 0; font-size: 21px; letter-spacing: 2px; }
+.setup-head h1 span { font-size: 11px; color: var(--dim); letter-spacing: 1px; margin-left: 6px; }
+.setup-head .setup-lead { font-size: 11.5px; color: #7d8b98; margin-left: auto; }
+.setup-cols {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 10px 28px; align-items: start;
+}
+.setup-col { min-width: 0; }
+.col-title {
+  margin: 0 0 12px; font-size: 12.5px; color: #7fd0ab; letter-spacing: 2px;
+  padding-bottom: 6px; border-bottom: 1px dashed rgba(127, 208, 171, .28);
+}
+.setup-foot { margin-top: 6px; }
+@media (max-width: 720px) {
+  .setup-cols { grid-template-columns: 1fr; }
+  .setup-head .setup-lead { display: none; }
+}
+.field { margin-bottom: 12px; }
+.field > label { display: block; font-size: 12px; color: var(--dim); margin-bottom: 6px; letter-spacing: .5px; }
+.seg { display: flex; flex-wrap: wrap; gap: 6px; }
+.seg button {
+  background: var(--panel); color: var(--text); border: 1px solid var(--line);
+  border-radius: 8px; padding: 6px 11px; font-size: 12.5px;
+}
+.seg button.on { background: linear-gradient(180deg, #2f7d5c, #235e44); border-color: #3aa377; font-weight: 700; }
+.checks { display: flex; flex-direction: column; gap: 5px; }
+.check { font-size: 12.5px; color: #c3cfda; display: flex; align-items: center; gap: 7px; }
+.tip { font-size: 11.5px; color: #7d8b98; margin: 6px 0 0; }
+.start {
+  width: 100%; margin-top: 6px; padding: 11px;
+  background: linear-gradient(180deg, #3aa377, #26674a); color: #fff;
+  border: none; border-radius: 10px; font-size: 15px; font-weight: 700; letter-spacing: 2px;
+}
+.start:hover { filter: brightness(1.1); }
+.fine { color: #6c7c8b; font-size: 11px; text-align: center; margin: 10px 0 0; }
+
+/* ---------------- 声明区 ---------------- */
+#declare-list { display: flex; flex-direction: column; gap: 6px; max-height: 380px; overflow-y: auto; }
+#declare-list .opt {
+  padding: 6px 9px; border-radius: 8px; background: #1b2530;
+  border: 1px solid var(--line); cursor: pointer; font-size: 12.5px;
+}
+#declare-list .opt:hover { background: #22303d; border-color: #3d5163; }
+#declare-list .opt.on { background: #1d3a2c; border-color: #3aa377; }
+#declare-list .opt small { color: var(--dim); }
+#declare-list .opt .eq {
+  font-family: Consolas, "Cascadia Mono", monospace;
+  font-size: 11.5px; color: #9fe3c0; margin-top: 3px;
+}
+#declare-list .opt .eq.small { color: #7d8b98; font-size: 10.5px; }
+.declare-search { display: flex; gap: 6px; margin-bottom: 8px; }
+.declare-search input {
+  flex: 1 1 auto; background: #101820; color: var(--text);
+  border: 1px solid var(--line); border-radius: 6px; padding: 6px 8px;
+}
+
+/* ---------------- 响应提示条 ---------------- */
+#demand-bar {
+  display: flex; align-items: center; gap: 10px;
+  background: linear-gradient(90deg, #2a2415, #1b2530);
+  border: 1px solid #6b5a20; border-radius: 10px;
+  padding: 8px 12px; font-size: 12.5px; color: #ffe9a8;
+}
+#demand-bar .who { font-weight: 700; color: #fff; }
+#demand-bar .acts { margin-left: auto; display: flex; gap: 6px; }
+
+@media (max-width: 1180px) {
+  #left { flex-basis: 170px; }
+  #right { flex-basis: 210px; }
+  :root { --card-w: 80px; }
+}
+@media (max-width: 900px) {
+  #body { flex-direction: column; overflow-y: auto; }
+  #left, #right { flex: 0 0 auto; }
+}

@@ -1,0 +1,9 @@
+=== Pass 规则 ===
+A 铺垫 → B Pass → C Pass：turn=0（期望 0=A），round=2，allPassed=true
+A 铺垫 → B 反应 → C Pass → A Pass：turn=1（期望 1=B），round=2，allPassed=true，bench=[]
+只有 B Pass（1/2）时：bench=["HCl"]，turn=2（实验台应保留）
+
+=== 回溯（悔棋）语义 ===
+B 第一次操作后 turn=2（C 的回合）
+第二次操作后：nodeSnapshot 对应上一次操作前（turn=2），prevSnapshot 对应上上次（turn=0）
+点回溯 → 恢复到 turn=2，即「上家上一次出牌之后」那一刻（撤销自己上一次操作）

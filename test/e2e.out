@@ -1,0 +1,37 @@
+1) 任意物质是否可出: true
+2) 候选: HCl → HCl + NaOH → NaCl + H₂O | HCl → HCl + Ca(OH)₂ → CaCl₂ + H₂O | HCl → HCl + KOH → KCl + H₂O
+3) 指定为 NaOH 后出牌: true
+4) 日志: A 出牌：HCl + NaOH → NaCl + H₂O　【中和反应·中和】
+5) 多对象: HCl → HCl + NaOH → NaCl + H₂O | H₂SO₄ → H₂SO₄ + NaOH → Na₂SO₄ + H₂O
+6) 选 HCl 出牌: true → B 出牌：HCl + NaOH → NaCl + H₂O　【中和反应·中和】
+7) 多选 (NaOH + H₂SO₄) 的可选反应: HCl + NaOH → NaCl + H₂O〔本反应实际用到：NaOH〕
+8) 不参与反应的凑数牌: H₂SO₄（界面会先弹确认框提醒）
+
+离子适配（物质数 / 可作为反应物 / 涉及反应）
+  F⁻       14 / 232 / 232
+  CH₃COO⁻  13 / 218 / 218
+  C₂O₄²⁻   14 / 186 / 186
+  NH₄⁺     18 / 366 / 389
+  Ba²⁺     19 / 396 / 396
+
+规模：物质 259 种，反应 2031 条，分解反应 0 条，牌表 50 种
+
+钙相关物质（化学式 / 名称 / 可溶性 / 作反应物次数 / 作产物次数）
+  Ca(OH)₂         氢氧化钙        m  71   3
+  CaCl₂           氯化钙         y  24  13
+  CaCO₃           碳酸钙         n   4  30
+  CaO             氧化钙         x   4   0
+  CaSO₄           硫酸钙         m  24  15
+  Ca(NO₃)₂        硝酸钙         y  15  14
+  CaC₂O₄          草酸钙         n   0  44
+  Ca₃(PO₄)₂       磷酸钙         n   0  36
+  (CH₃COO)₂Ca     醋酸钙         y  14  12
+  Ca(ClO)₂        次氯酸钙        y   0   1
+  Ca(HCO₃)₂       碳酸氢钙        y  20   3
+  CaC₂            碳化钙         x   1   0
+  CaF₂            氟化钙         n   1   1
+  CaBr₂           溴化钙         y  20   9
+  CaI₂            碘化钙         y  19   7
+  CaSO₃           亚硫酸钙        n   0  29
+  Ca(MnO₄)₂       高锰酸钙        y   9   9
+  Ca(AlO₂)₂       偏铝酸钙        y   8   9

@@ -1,0 +1,318 @@
+=== 酸（15） ===
+  CH₃COOH         醋酸            CHO  DLC·弱酸，食醋的主要成分
+  H₂C₂O₄          草酸            CHO  DLC·弱酸，有还原性
+  H₂CO₃           碳酸            HCO  弱酸，不稳定，易分解为 CO₂ 和 H₂O
+  H₂S             氢硫酸           HS  硫化氢的水溶液，弱酸，有臭鸡蛋气味
+  H₂SiO₃          硅酸            HSiO  白色胶状沉淀，弱酸
+  H₂SO₃           亚硫酸           HSO  弱酸，不稳定，易分解为 SO₂ 和 H₂O
+  H₂SO₄           硫酸            HSO  常见强酸，浓硫酸有强吸水性、脱水性
+  H₃PO₄           磷酸            HPO  中强酸
+  HBr             氢溴酸           HBr  强酸
+  HCH₃COO         醋酸            HCO
+  HCl             盐酸            HCl  常见强酸
+  HClO            次氯酸           HClO  弱酸，有强氧化性和漂白性，见光分解
+  HF              氢氟酸           HF  弱酸，能腐蚀玻璃
+  HI              氢碘酸           HI  强酸，有还原性
+  HNO₃            硝酸            HNO  常见强酸，见光易分解
+
+=== 碱（11） ===
+  Al(OH)₃         氢氧化铝          AlOH  两性氢氧化物
+  Ba(OH)₂         氢氧化钡          BaOH  可溶性钡盐、钡碱有毒
+  Ca(OH)₂         氢氧化钙          CaOH  俗称熟石灰、消石灰，澄清石灰水
+  Cu(OH)₂         氢氧化铜          CuOH  蓝色沉淀
+  Fe(OH)₂         氢氧化亚铁         FeOH  白色沉淀，易被氧化
+  Fe(OH)₃         氢氧化铁          FeOH  DLC·红褐色沉淀
+  KOH             氢氧化钾          KOH  强碱
+  Mg(OH)₂         氢氧化镁          MgOH  DLC·白色沉淀，受热分解
+  NaOH            氢氧化钠          NaOH  俗称烧碱、火碱、苛性钠
+  NH₃·H₂O         一水合氨          NHO  唯一的可溶性弱碱，受热易分解
+  Zn(OH)₂         氢氧化锌          ZnOH  白色沉淀，两性
+
+=== 盐（206） ===
+  (C₂O₄)₃Al₂      草酸铝           AlCO  难溶（沉淀）
+  (C₂O₄)₃Fe₂      草酸铁           FeCO
+  (CH₃COO)₂Ba     醋酸钡           BaCHO
+  (CH₃COO)₂Ca     醋酸钙           CHOCa
+  (CH₃COO)₂Cu     醋酸铜           CuCHO
+  (CH₃COO)₂Fe     醋酸亚铁          CHOFe
+  (CH₃COO)₂Mg     醋酸镁           CHOMg
+  (CH₃COO)₂Zn     醋酸锌           ZnCHO
+  (CH₃COO)₃Al     醋酸铝           AlCHO
+  (CH₃COO)₃Fe     醋酸铁           FeCHO
+  (HCO₃)₂Ba       碳酸氢钡          BaHCO
+  (HCO₃)₂Ca       碳酸氢钙          CaHCO
+  (HCO₃)₂Cu       碳酸氢铜          CuHCO
+  (HCO₃)₂Fe       碳酸氢亚铁         FeHCO
+  (HCO₃)₂Mg       碳酸氢镁          MgHCO
+  (HCO₃)₂Zn       碳酸氢锌          ZnHCO
+  (HCO₃)₃Al       碳酸氢铝          AlHCO
+  (HCO₃)₃Fe       碳酸氢铁          FeHCO
+  (NH₄)₂CO₃       碳酸铵           NHCO  受热分解
+  (NH₄)₂SO₄       硫酸铵           NHSO  常见氮肥
+  (NO₃)₂Ba        硝酸钡           BaNO
+  (NO₃)₂Ca        硝酸钙           CaNO
+  (NO₃)₂Cu        硝酸铜           CuNO
+  (NO₃)₂Fe        硝酸亚铁          FeNO
+  (NO₃)₂Mg        硝酸镁           MgNO
+  (NO₃)₂Zn        硝酸锌           ZnNO
+  (NO₃)₃Al        硝酸铝           AlNO
+  (NO₃)₃Fe        硝酸铁           FeNO
+  (PO₄)₂Ba₃       磷酸钡           BaPO  难溶（沉淀）
+  (PO₄)₂Ca₃       磷酸钙           CaPO  难溶（沉淀）
+  (PO₄)₂Cu₃       磷酸铜           CuPO  难溶（沉淀）
+  (PO₄)₂Fe₃       磷酸亚铁          FePO  难溶（沉淀）
+  (PO₄)₂Mg₃       磷酸镁           MgPO  难溶（沉淀）
+  (PO₄)₂Zn₃       磷酸锌           ZnPO  难溶（沉淀）
+  (SiO₃)₃Al₂      硅酸铝           AlSiO  难溶（沉淀）
+  (SiO₃)₃Fe₂      硅酸铁           FeSiO  难溶（沉淀）
+  (SO₄)₃Al₂       硫酸铝           AlSO
+  (SO₄)₃Fe₂       硫酸铁           FeSO
+  Ag₂C₂O₄         草酸银           AgCO  难溶（沉淀）
+  Ag₂CO₃          碳酸银           AgCO  淡黄色沉淀
+  Ag₂S            硫化银           AgS  黑色沉淀，难溶于酸
+  Ag₂SiO₃         硅酸银           AgSiO  难溶（沉淀）
+  Ag₂SO₃          亚硫酸银          AgSO  难溶（沉淀）
+  Ag₂SO₄          硫酸银           AgSO  微溶
+  Ag₃PO₄          磷酸银           AgPO  黄色沉淀
+  AgAlO₂          偏铝酸银          AgAlO
+  AgBr            溴化银           AgBr  淡黄色沉淀，感光材料
+  AgCH₃COO        醋酸银           AgCHO  微溶
+  AgCl            氯化银           AgCl  白色沉淀，不溶于稀硝酸
+  AgClO           次氯酸银          AgClO  只作为产物出现，不参与溶液中的复分解
+  AgF             氟化银           AgF  可溶性银盐
+  AgHCO₃          碳酸氢银          AgHCO
+  AgI             碘化银           AgI  黄色沉淀，用于人工降雨
+  AgMnO₄          高锰酸银          AgMnO
+  AgNO₃           硝酸银           AgNO  见光分解，用于检验氯离子
+  Al(ClO)₃        次氯酸铝          AlClO  只作为产物出现，不参与溶液中的复分解
+  Al₂(SO₄)₃       硫酸铝           AlSO
+  AlBr₃           溴化铝           AlBr
+  AlCl₃           氯化铝           AlCl
+  AlF₃            氟化铝           AlF  难溶（沉淀）
+  AlI₃            碘化铝           AlI
+  AlPO₄           磷酸铝           AlPO  难溶（沉淀）
+  Ba(AlO₂)₂       偏铝酸钡          BaAlO
+  Ba(ClO)₂        次氯酸钡          BaClO
+  Ba(MnO₄)₂       高锰酸钡          BaMnO
+  Ba(NO₃)₂        硝酸钡           BaNO  受热分解
+  Ba₃(PO₄)₂       磷酸钡           BaPO  白色沉淀
+  BaBr₂           溴化钡           BaBr
+  BaC₂O₄          草酸钡           BaCO  白色沉淀
+  BaCl₂           氯化钡           BaCl  有毒，用于检验硫酸根
+  BaCO₃           碳酸钡           BaCO  白色沉淀
+  BaF₂            氟化钡           BaF  难溶（沉淀）
+  BaI₂            碘化钡           BaI
+  BaS             硫化钡           BaS
+  BaSiO₃          硅酸钡           BaSiO  难溶（沉淀）
+  BaSO₃           亚硫酸钡          BaSO  白色沉淀，溶于酸
+  BaSO₄           硫酸钡           BaSO  白色沉淀，不溶于稀硝酸
+  Ca(AlO₂)₂       偏铝酸钙          CaAlO
+  Ca(ClO)₂        次氯酸钙          CaClO  漂白粉的有效成分
+  Ca(HCO₃)₂       碳酸氢钙          CaHCO  只存在于溶液中，受热分解
+  Ca(MnO₄)₂       高锰酸钙          CaMnO
+  Ca(NO₃)₂        硝酸钙           CaNO  可作氮肥
+  Ca₃(PO₄)₂       磷酸钙           CaPO  白色沉淀，骨骼主要成分
+  CaBr₂           溴化钙           CaBr
+  CaC₂            碳化钙           CaC  俗称电石，与水反应生成乙炔
+  CaC₂O₄          草酸钙           CaCO  白色沉淀，难溶于水
+  CaCl₂           氯化钙           CaCl  可作干燥剂
+  CaCO₃           碳酸钙           CaCO  大理石、石灰石的主要成分
+  CaF₂            氟化钙           CaF  萤石的主要成分，难溶于水
+  CaI₂            碘化钙           CaI
+  CaSO₃           亚硫酸钙          CaSO  难溶（沉淀）
+  CaSO₄           硫酸钙           CaSO  微溶
+  CH₃COONa        醋酸钠           CHONa  强碱弱酸盐，水解显碱性
+  Cu(AlO₂)₂       偏铝酸铜          CuAlO
+  Cu(ClO)₂        次氯酸铜          CuClO  只作为产物出现，不参与溶液中的复分解
+  Cu(MnO₄)₂       高锰酸铜          CuMnO
+  Cu(NO₃)₂        硝酸铜           CuNO  DLC·蓝色晶体，受热分解
+  Cu₂(OH)₂CO₃     碱式碳酸铜         CuOHC  铜生锈的产物，俗称铜绿
+  CuBr₂           溴化铜           CuBr
+  CuC₂O₄          草酸铜           CuCO  难溶（沉淀）
+  CuCl₂           氯化铜           CuCl  溶液呈蓝绿色
+  CuF₂            氟化铜           CuF  难溶（沉淀）
+  CuS             硫化铜           CuS  黑色沉淀
+  CuSiO₃          硅酸铜           CuSiO  难溶（沉淀）
+  CuSO₄           硫酸铜           CuSO  白色粉末，遇水变蓝；溶液呈蓝色
+  Fe(AlO₂)₂       偏铝酸亚铁         FeAlO
+  Fe(AlO₂)₃       偏铝酸铁          FeAlO
+  Fe(ClO)₂        次氯酸亚铁         FeClO  只作为产物出现，不参与溶液中的复分解
+  Fe(ClO)₃        次氯酸铁          FeClO  只作为产物出现，不参与溶液中的复分解
+  Fe(MnO₄)₂       高锰酸亚铁         FeMnO
+  Fe(MnO₄)₃       高锰酸铁          FeMnO
+  Fe(NO₃)₂        硝酸亚铁          FeNO
+  Fe(NO₃)₃        硝酸铁           FeNO  受热分解
+  Fe₂(SO₄)₃       硫酸铁           FeSO
+  FeBr₂           溴化亚铁          FeBr
+  FeBr₃           溴化铁           FeBr
+  FeC₂O₄          草酸亚铁          FeCO
+  FeCl₂           氯化亚铁          FeCl  浅绿色溶液
+  FeCl₃           氯化铁           FeCl  溶液呈黄色
+  FeF₂            氟化亚铁          FeF  难溶（沉淀）
+  FeF₃            氟化铁           FeF  难溶（沉淀）
+  FeI₂            碘化亚铁          FeI
+  FePO₄           磷酸铁           FePO  难溶（沉淀）
+  FeS             硫化亚铁          FeS  黑色固体，与酸反应生成 H₂S
+  FeSiO₃          硅酸亚铁          FeSiO  难溶（沉淀）
+  FeSO₄           硫酸亚铁          FeSO  浅绿色溶液，受热易被氧化
+  K₂C₂O₄          草酸钾           KCO
+  K₂CO₃           碳酸钾           KCO  草木灰的主要成分
+  K₂S             硫化钾           KS
+  K₂SiO₃          硅酸钾           KSiO
+  K₂SO₃           亚硫酸钾          KSO
+  K₂SO₄           硫酸钾           KSO  钾肥
+  K₃PO₄           磷酸钾           KPO
+  KAlO₂           偏铝酸钾          KAlO
+  KBr             溴化钾           KBr
+  KCH₃COO         醋酸钾           KCHO
+  KCl             氯化钾           KCl  常见钾肥
+  KClO            次氯酸钾          KClO
+  KF              氟化钾           KF
+  KHCO₃           碳酸氢钾          KHCO
+  KI              碘化钾           KI
+  KMnO₄           高锰酸钾          KMnO  紫黑色晶体，强氧化剂
+  KNO₃            硝酸钾           KNO  受热分解，黑火药成分
+  Mg(AlO₂)₂       偏铝酸镁          MgAlO
+  Mg(ClO)₂        次氯酸镁          MgClO
+  Mg(MnO₄)₂       高锰酸镁          MgMnO
+  Mg(NO₃)₂        硝酸镁           MgNO  受热分解
+  Mg₃N₂           氮化镁           MgN  黄绿色固体，与水反应生成氨气
+  MgBr₂           溴化镁           MgBr
+  MgC₂O₄          草酸镁           MgCO
+  MgCl₂           氯化镁           MgCl
+  MgCO₃           碳酸镁           MgCO  白色沉淀
+  MgF₂            氟化镁           MgF  难溶（沉淀）
+  MgI₂            碘化镁           MgI
+  MgS             硫化镁           MgS  难溶（沉淀）
+  MgSiO₃          硅酸镁           MgSiO  难溶（沉淀）
+  MgSO₃           亚硫酸镁          MgSO  难溶（沉淀）
+  MgSO₄           硫酸镁           MgSO
+  MnC₂O₄          草酸锰           MnCO  浅粉色沉淀
+  Na₂C₂O₄         草酸钠           NaCO
+  Na₂CO₃          碳酸钠           NaCO  俗称纯碱、苏打
+  Na₂S            硫化钠           NaS  水解显碱性
+  Na₂SiO₃         硅酸钠           NaSiO  水玻璃，矿物胶
+  Na₂SO₃          亚硫酸钠          NaSO  有还原性
+  Na₂SO₄          硫酸钠           NaSO
+  Na₂ZnO₂         锌酸钠           NaZnO  氢氧化锌溶于强碱的产物
+  Na₃PO₄          磷酸钠           NaPO
+  NaAlO₂          偏铝酸钠          NaAlO
+  NaBr            溴化钠           NaBr
+  NaCH₃COO        醋酸钠           NaCHO
+  NaCl            氯化钠           NaCl  DLC·食盐
+  NaClO           次氯酸钠          NaClO  漂白液的有效成分
+  NaF             氟化钠           NaF
+  NaHCO₃          碳酸氢钠          NaHCO  俗称小苏打，受热分解
+  NaI             碘化钠           NaI
+  NaMnO₄          高锰酸钠          NaMnO
+  NaNO₃           硝酸钠           NaNO
+  NH₄₂C₂O₄        草酸铵           NHCO
+  NH₄₂CO₃         碳酸铵           NHCO
+  NH₄₂S           硫化铵           NHS
+  NH₄₂SiO₃        硅酸铵           NHSiO
+  NH₄₂SO₃         亚硫酸铵          NHSO
+  NH₄₂SO₄         硫酸铵           NHSO
+  NH₄₃PO₄         磷酸铵           NHPO
+  NH₄Br           溴化铵           NHBr
+  NH₄CH₃COO       醋酸铵           NHCO
+  NH₄Cl           氯化铵           NHCl  受热分解
+  NH₄ClO          次氯酸铵          NHClO
+  NH₄F            氟化铵           NHF
+  NH₄HCO₃         碳酸氢铵          NHCO  受热分解，可作氮肥
+  NH₄I            碘化铵           NHI
+  NH₄NO₃          硝酸铵           NHO  受热分解，可作氮肥
+  Zn(AlO₂)₂       偏铝酸锌          ZnAlO
+  Zn(ClO)₂        次氯酸锌          ZnClO
+  Zn(MnO₄)₂       高锰酸锌          ZnMnO
+  Zn(NO₃)₂        硝酸锌           ZnNO  受热分解
+  ZnBr₂           溴化锌           ZnBr
+  ZnC₂O₄          草酸锌           ZnCO  难溶（沉淀）
+  ZnCl₂           氯化锌           ZnCl
+  ZnCO₃           碳酸锌           ZnCO  白色沉淀
+  ZnF₂            氟化锌           ZnF  难溶（沉淀）
+  ZnI₂            碘化锌           ZnI
+  ZnS             硫化锌           ZnS  难溶（沉淀）
+  ZnSiO₃          硅酸锌           ZnSiO  难溶（沉淀）
+  ZnSO₃           亚硫酸锌          ZnSO  难溶（沉淀）
+  ZnSO₄           硫酸锌           ZnSO  DLC·无色晶体
+
+=== 氧化物（26） ===
+  Al₂O₃           氧化铝           AlO  DLC·两性氧化物
+  BaO             氧化钡           BaO
+  C₂H₂            乙炔            CH  可燃气体，氧炔焰用于焊接
+  C₂H₅OH          乙醇            CHO  酒精，可作燃料
+  CaO             氧化钙           CaO  俗称生石灰，遇水放热
+  CH₄             甲烷            CH  最简单的有机物，天然气主要成分
+  CO              一氧化碳          CO  有毒，可燃
+  CO₂             二氧化碳          CO  能使澄清石灰水变浑浊
+  CuO             氧化铜           CuO  黑色粉末
+  Fe₂O₃           氧化铁           FeO  红棕色，俗称铁锈
+  Fe₃O₄           四氧化三铁         FeO  黑色晶体，有磁性
+  H₂O             水             HO  最常见的溶剂
+  HgO             氧化汞           HgO  红色固体，受热分解
+  KO₂             超氧化钾          KO
+  MgO             氧化镁           MgO  白色固体，金属氧化物
+  Na₂O            氧化钠           NaO
+  Na₂O₂           过氧化钠          NaO  淡黄色固体
+  NH₃             氨气            NH  有刺激性气味，极易溶于水
+  NO              一氧化氮          NO  无色气体，难溶于水，易被氧化为 NO₂
+  NO₂             二氧化氮          NO  红棕色有刺激性气味的气体，与水反应生成硝酸和 NO
+  P₂O₅            五氧化二磷         PO  白色固体，强吸水性
+  SiF₄            四氟化硅          SiF  氢氟酸腐蚀玻璃的产物
+  SiO₂            二氧化硅          SiO  沙子、石英的主要成分，与氢氟酸、强碱反应
+  SO₂             二氧化硫          SO  有刺激性气味，形成酸雨
+  SO₃             三氧化硫          SO  遇水放出大量热
+  ZnO             氧化锌           ZnO  白色固体，两性氧化物
+
+=== 单质（19） ===
+  Ag              银             Ag  DLC·导电导热性最好的金属
+  Al              铝             Al  表面易形成致密氧化膜
+  Br₂             溴             Br  深红棕色液体，易挥发
+  C               碳             C  常见还原剂
+  Cl₂             氯气            Cl  黄绿色，有毒
+  Cu              铜             Cu  紫红色金属，活动性弱于氢
+  Fe              铁             Fe  金属活动性位于氢之前
+  H₂              氢气            H  最轻的气体，可燃
+  Hg              汞             Hg  常温下唯一液态金属
+  I₂              碘             I  紫黑色固体，升华产生紫色蒸气
+  K               钾             K  DLC·活动性极强的金属
+  Mg              镁             Mg  燃烧发出耀眼白光
+  N₂              氮气            N  空气的主要成分，性质稳定
+  Na              钠             Na  与水剧烈反应
+  O₂              氧气            O  助燃，供给呼吸
+  P               红磷            P  红棕色固体，燃烧生成大量白烟
+  S               硫             S  淡黄色固体，燃烧发出蓝紫色火焰
+  Si              硅             Si  半导体材料
+  Zn              锌             Zn  常用于制氢气
+
+=== 可疑名称 ===
+  无
+
+=== 名称与化学式对照（抽查常见物质） ===
+  HCl         HCl             盐酸
+  H2SO4       H₂SO₄           硫酸
+  HNO3        HNO₃            硝酸
+  NaOH        NaOH            氢氧化钠
+  NH3H2O      NH₃·H₂O         一水合氨
+  NH3         NH₃             氨气
+  CaNO32      Ca(NO₃)₂        硝酸钙
+  CaCl2       CaCl₂           氯化钙
+  CaSO4       CaSO₄           硫酸钙
+  CaCO3       CaCO₃           碳酸钙
+  Ca(OH)2     Ca(OH)₂         氢氧化钙
+  CaSO3       （不在库中）
+  CaSiO3      （不在库中）
+  CaF2        CaF₂            氟化钙
+  KClO        （不在库中）
+  KClO3       （不在库中）
+  KMnO4       KMnO₄           高锰酸钾
+  AgNO3       AgNO₃           硝酸银
+  BaNO32      Ba(NO₃)₂        硝酸钡
+  FeOH2       （不在库中）
+  Fe(OH)3     Fe(OH)₃         氢氧化铁
+  Cu(OH)2     Cu(OH)₂         氢氧化铜
+  Cu2OH2CO3   Cu₂(OH)₂CO₃     碱式碳酸铜
+  Na2C2O4     Na₂C₂O₄         草酸钠
+  CH3COONa    CH₃COONa        醋酸钠
+  NH4F        （不在库中）
+  NH42SO4     (NH₄)₂SO₄       硫酸铵
