@@ -728,7 +728,7 @@
   function showCredits() {
     var d = el('div', '');
     d.appendChild(el('div', 'quote',
-      '本页是桌游《化学之王》的非官方网页复现版，用于学习与娱乐，不影响原作的任何权益。'));
+      '本页是桌游《化学之王》的官方单机网页版，原作SLH.Pictures.Inc.'));
     d.appendChild(el('h3', '', '原作'));
     d.appendChild(el('div', 'kv', '<b>桌游名称</b><span>化学之王 Chemical Combo</span>'));
     d.appendChild(el('div', 'kv', '<b>规则来源</b><span>《化学之王 游戏指南》（正文第 1~6 部分及附录）、《规则补充》</span>'));
@@ -745,7 +745,7 @@
     d.appendChild(el('div', 'kv', '<b>准确性</b><span>经独立化学审查（test/chemistry-review.out）后修正；不含分解反应'));
     d.appendChild(el('h3', '', '致谢'));
     d.appendChild(el('div', 'quote',
-      '感谢《化学之王》原作设计者与所有把化学做成游戏的人。愿这套卡片能让你更愿意翻开课本。'));
+      '感谢《化学之王》原作设计者SLH.Pictures.Inc.与所有把化学做成游戏的人。愿这套卡片能让你更愿意翻开课本。'));
     openOverlay('🧑‍🔬 制作人员与声明', d);
   }
 
